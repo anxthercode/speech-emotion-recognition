@@ -1,0 +1,10 @@
+{
+  "unit_tests_passed": 24,
+  "unit_tests_seconds": 21.983,
+  "post_cleanup_final_checkpoint_hashes_verified": 14,
+  "post_cleanup_raw_wav_count": 7442,
+  "post_cleanup_feature_files": 7435,
+  "post_cleanup_demo_wav_count": 42,
+  "preview_generator": "two views, working relative links, no duplicate PNG; test output removed",
+  "gui_physical_audio_verified": false
+}

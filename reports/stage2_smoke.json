@@ -1,0 +1,333 @@
+{
+  "all_models_complete": true,
+  "stage2_complete": false,
+  "mode": "smoke",
+  "test_evaluated": false,
+  "run_root": "runs/stage2_smoke_04e2c69bc916",
+  "manifest": {
+    "mode": "smoke",
+    "config": {
+      "selection_split": "speaker",
+      "selection_seed": 17,
+      "final_seeds": [
+        17,
+        29,
+        43
+      ],
+      "cpu_threads": 2,
+      "cnn": {
+        "learning_rates": [
+          0.001,
+          0.0003
+        ],
+        "dropouts": [
+          0.2,
+          0.4
+        ],
+        "weight_decay": 0.0001,
+        "batch_size": 32,
+        "max_epochs": 40,
+        "patience": 8,
+        "amp": true
+      },
+      "gmm": {
+        "components": [
+          2,
+          4,
+          8,
+          16
+        ],
+        "variance_floors": [
+          0.001,
+          0.01
+        ],
+        "frames_per_file": 80,
+        "max_iter": 60,
+        "tol": 0.001,
+        "n_init": 2,
+        "batch_size": 4096
+      },
+      "svm": {
+        "C": [
+          0.1,
+          1,
+          10,
+          100
+        ],
+        "gamma": [
+          "scale",
+          0.001,
+          0.01
+        ],
+        "cache_size_mb": 256
+      }
+    },
+    "dataset_fingerprint": "d39e9ad9be5949114180b5cbfe87f9fd603eaf964ea4ea36889b92b8de0015fa",
+    "versions": {
+      "python": "3.12.10",
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "torch": "2.11.0+cu128",
+      "sklearn": "1.9.1"
+    },
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "implementation": {
+      "ser/gmm.py": "7aa8e05969f8650cab7df9314d53e621ad3bad88ef3abb319591e872bc7b51c7",
+      "ser/cnn.py": "9885098b89c1c3c85e2f63c0351e0331b433397a49290c11693304aa19d077c6",
+      "ser/train_cnn.py": "3f1a2a87742612702bf19e67ad26a11787b0fcee38013ea036c466536a9f2fee",
+      "ser/train_classical.py": "57239f586d45f58d3d5d2705fd074eeb959b5bd314ed149315ce1aeebda9ce44",
+      "ser/training_common.py": "93be6edbef1d193cbe57504e024bd41e02f58482c45cc38c595f24298f3bbdcf",
+      "ser/features.py": "d25215048a5ecd59657cf0bf9a54210d62b7bb56d5717279dd1880e64bbfed53",
+      "ser/dataset.py": "dbe5dd25532f930a7a2180a1eed98141c190cab473ac34c5183ae626c917e67d",
+      "tools/train_models.py": "d84f7684b119d071963605aa9ad6efc3e02637539fa5ee173c8eb98640a30c64"
+    }
+  },
+  "models": {
+    "svm": {
+      "mode": "smoke",
+      "model": "svm",
+      "runs": [
+        {
+          "complete": true,
+          "model": "svm",
+          "split": "speaker",
+          "seed": 17,
+          "parameters": {
+            "C": 10,
+            "gamma": "scale",
+            "cache_size_mb": 256
+          },
+          "validation": {
+            "macro_f1": 0.2767676767676768,
+            "uar": 0.3333333333333333,
+            "accuracy": 0.3333333333333333,
+            "confusion_matrix": [
+              [
+                3,
+                0,
+                0,
+                1,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                1,
+                1,
+                1,
+                0
+              ],
+              [
+                2,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                0,
+                3,
+                0,
+                0
+              ],
+              [
+                1,
+                3,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                2,
+                0,
+                1,
+                1,
+                0
+              ]
+            ]
+          },
+          "fit_seconds": 0.01951790000020992,
+          "total_seconds": 0.043459900000016205,
+          "checkpoint": "model.joblib",
+          "checkpoint_sha256": "c7886c6c801d7375421cbf4c624ccc5c510322796fa83b8799eb002a09f49075",
+          "run_directory": "runs/stage2_smoke_04e2c69bc916/svm/speaker/trial_00_seed17"
+        }
+      ]
+    },
+    "gmm": {
+      "mode": "smoke",
+      "model": "gmm",
+      "runs": [
+        {
+          "complete": true,
+          "model": "gmm",
+          "split": "speaker",
+          "seed": 17,
+          "parameters": {
+            "n_components": 2,
+            "variance_floor": 0.001,
+            "max_iter": 5,
+            "tol": 0,
+            "n_init": 1,
+            "batch_size": 4096
+          },
+          "validation": {
+            "macro_f1": 0.2508417508417508,
+            "uar": 0.2916666666666667,
+            "accuracy": 0.2916666666666667,
+            "confusion_matrix": [
+              [
+                2,
+                1,
+                1,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                2,
+                0,
+                1,
+                1,
+                0
+              ],
+              [
+                3,
+                1,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                2,
+                0,
+                0,
+                2,
+                0,
+                0
+              ],
+              [
+                0,
+                1,
+                0,
+                2,
+                1,
+                0
+              ],
+              [
+                0,
+                2,
+                2,
+                0,
+                0,
+                0
+              ]
+            ]
+          },
+          "fit_seconds": 0.020323199999438657,
+          "total_seconds": 0.05946049999965908,
+          "checkpoint": "model.npz",
+          "checkpoint_sha256": "eef13c2c13f1f8ed694767d0a976f79cb9624a2c0ff7f03cbce0380cab2063e7",
+          "run_directory": "runs/stage2_smoke_04e2c69bc916/gmm/speaker/trial_00_seed17"
+        }
+      ]
+    },
+    "cnn": {
+      "mode": "smoke",
+      "model": "cnn",
+      "runs": [
+        {
+          "complete": true,
+          "model": "cnn",
+          "split": "speaker",
+          "seed": 17,
+          "parameters": {
+            "learning_rate": 0.001,
+            "dropout": 0.2,
+            "weight_decay": 0.0001,
+            "batch_size": 32,
+            "max_epochs": 2,
+            "patience": 2,
+            "amp": true
+          },
+          "validation": {
+            "macro_f1": 0.047619047619047616,
+            "uar": 0.16666666666666666,
+            "accuracy": 0.16666666666666666,
+            "confusion_matrix": [
+              [
+                4,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                4,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                4,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                4,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                4,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                4,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            ],
+            "loss": 1.7903056169376044
+          },
+          "best_epoch": 1,
+          "epochs": 2,
+          "epoch_seconds": [
+            0.687824499999806,
+            0.1731085000001258
+          ],
+          "fit_seconds": 0.8609329999999318,
+          "this_session_seconds": 0.942952499999592,
+          "checkpoint": "best.pt",
+          "checkpoint_sha256": "f429b7ffbd5ba14e9b00a4a7f90f0c0c991979adf3fd848f902d1af642d4f9ca",
+          "run_directory": "runs/stage2_smoke_04e2c69bc916/cnn/speaker/trial_00_seed17"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,126 @@
+{
+  "root": "C:\\Users\\Asus\\Documents\\ChatGPT\\omoproject",
+  "lfs_verified_objects": 7439,
+  "source_wav_count": 7442,
+  "total_bytes": 619494128,
+  "total_files": 22452,
+  "targets": [
+    {
+      "path": ".qa",
+      "files": 34,
+      "bytes": 1618434
+    },
+    {
+      "path": "gui_mockup.html",
+      "files": 1,
+      "bytes": 192291
+    },
+    {
+      "path": "gui_preview.png",
+      "files": 1,
+      "bytes": 96523
+    },
+    {
+      "path": "qt_preview.png",
+      "files": 1,
+      "bytes": 96523
+    },
+    {
+      "path": "qt_view_1.png",
+      "files": 1,
+      "bytes": 45256
+    },
+    {
+      "path": "qt_view_2.png",
+      "files": 1,
+      "bytes": 72006
+    },
+    {
+      "path": "runs\\stage2_benchmark_d95ed19439ff",
+      "files": 26,
+      "bytes": 6309761
+    },
+    {
+      "path": "runs\\stage2_smoke_04e2c69bc916",
+      "files": 26,
+      "bytes": 2337737
+    },
+    {
+      "path": "data\\raw\\CREMA-D\\AudioMP3",
+      "files": 7442,
+      "bytes": 968558
+    },
+    {
+      "path": "data\\raw\\CREMA-D\\VideoFlash",
+      "files": 7442,
+      "bytes": 974901
+    },
+    {
+      "path": "data\\raw\\CREMA-D\\.git\\lfs\\objects",
+      "files": 7439,
+      "bytes": 605686258
+    },
+    {
+      "path": "reports\\audit_2026-11-14\\gui_1040x760.png",
+      "files": 1,
+      "bytes": 104535
+    },
+    {
+      "path": "reports\\audit_2026-11-14\\gui_1280x880.png",
+      "files": 1,
+      "bytes": 116444
+    },
+    {
+      "path": "reports\\audit_2026-11-14\\gui_1920x1080.png",
+      "files": 1,
+      "bytes": 127482
+    },
+    {
+      "path": "reports\\audit_2026-11-14\\gui_cnn_noise.png",
+      "files": 1,
+      "bytes": 116444
+    },
+    {
+      "path": "reports\\audit_2026-11-14\\gui_experiments.png",
+      "files": 1,
+      "bytes": 45294
+    },
+    {
+      "path": "reports\\audit_2026-11-14\\gui_gmm_noise.png",
+      "files": 1,
+      "bytes": 120841
+    },
+    {
+      "path": "reports\\audit_2026-11-14\\gui_svm_noise.png",
+      "files": 1,
+      "bytes": 120824
+    },
+    {
+      "path": "reports\\audit_2026-11-14\\export_example.json",
+      "files": 1,
+      "bytes": 1648
+    },
+    {
+      "path": "qt_gui\\__pycache__",
+      "files": 6,
+      "bytes": 96698
+    },
+    {
+      "path": "ser\\__pycache__",
+      "files": 12,
+      "bytes": 96438
+    },
+    {
+      "path": "tools\\__pycache__",
+      "files": 9,
+      "bytes": 96480
+    },
+    {
+      "path": "tests\\__pycache__",
+      "files": 3,
+      "bytes": 52752
+    }
+  ],
+  "deleted": true,
+  "deleted_at": "2026-11-18T00:16:09.4521259+03:00"
+}

@@ -1,0 +1,1311 @@
+{
+  "all_models_complete": true,
+  "stage2_complete": true,
+  "mode": "full",
+  "test_evaluated": false,
+  "run_root": "runs/stage2_full_2bf7b0d2faf6",
+  "manifest": {
+    "mode": "full",
+    "config": {
+      "selection_split": "speaker",
+      "selection_seed": 17,
+      "final_seeds": [
+        17,
+        29,
+        43
+      ],
+      "cpu_threads": 2,
+      "cnn": {
+        "learning_rates": [
+          0.001,
+          0.0003
+        ],
+        "dropouts": [
+          0.2,
+          0.4
+        ],
+        "weight_decay": 0.0001,
+        "batch_size": 32,
+        "max_epochs": 40,
+        "patience": 8,
+        "amp": true
+      },
+      "gmm": {
+        "components": [
+          2,
+          4,
+          8,
+          16
+        ],
+        "variance_floors": [
+          0.001,
+          0.01
+        ],
+        "frames_per_file": 80,
+        "max_iter": 60,
+        "tol": 0.001,
+        "n_init": 2,
+        "batch_size": 4096
+      },
+      "svm": {
+        "C": [
+          0.1,
+          1,
+          10,
+          100
+        ],
+        "gamma": [
+          "scale",
+          0.001,
+          0.01
+        ],
+        "cache_size_mb": 256
+      }
+    },
+    "dataset_fingerprint": "d39e9ad9be5949114180b5cbfe87f9fd603eaf964ea4ea36889b92b8de0015fa",
+    "versions": {
+      "python": "3.12.10",
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "torch": "2.11.0+cu128",
+      "sklearn": "1.9.1"
+    },
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "implementation": {
+      "ser/gmm.py": "7aa8e05969f8650cab7df9314d53e621ad3bad88ef3abb319591e872bc7b51c7",
+      "ser/cnn.py": "9885098b89c1c3c85e2f63c0351e0331b433397a49290c11693304aa19d077c6",
+      "ser/train_cnn.py": "3f1a2a87742612702bf19e67ad26a11787b0fcee38013ea036c466536a9f2fee",
+      "ser/train_classical.py": "71c8834a12ee65cf8b8bb25430af09d19e7a6eb157357728e7965353a513184d",
+      "ser/training_common.py": "93be6edbef1d193cbe57504e024bd41e02f58482c45cc38c595f24298f3bbdcf",
+      "ser/features.py": "d25215048a5ecd59657cf0bf9a54210d62b7bb56d5717279dd1880e64bbfed53",
+      "ser/dataset.py": "dbe5dd25532f930a7a2180a1eed98141c190cab473ac34c5183ae626c917e67d",
+      "tools/train_models.py": "d84f7684b119d071963605aa9ad6efc3e02637539fa5ee173c8eb98640a30c64"
+    }
+  },
+  "models": {
+    "svm": {
+      "mode": "full",
+      "model": "svm",
+      "runs": [
+        {
+          "complete": true,
+          "model": "svm",
+          "split": "speaker",
+          "seed": 17,
+          "parameters": {
+            "C": 100,
+            "gamma": 0.001,
+            "cache_size_mb": 256
+          },
+          "validation": {
+            "macro_f1": 0.5016257885145773,
+            "uar": 0.5117508572598393,
+            "accuracy": 0.5122591943957968,
+            "confusion_matrix": [
+              [
+                158,
+                7,
+                10,
+                18,
+                1,
+                1
+              ],
+              [
+                29,
+                66,
+                17,
+                29,
+                22,
+                32
+              ],
+              [
+                25,
+                9,
+                78,
+                24,
+                13,
+                46
+              ],
+              [
+                38,
+                19,
+                30,
+                81,
+                21,
+                6
+              ],
+              [
+                8,
+                8,
+                12,
+                22,
+                82,
+                35
+              ],
+              [
+                4,
+                17,
+                20,
+                10,
+                24,
+                120
+              ]
+            ]
+          },
+          "fit_seconds": 2.104092199999286,
+          "total_seconds": 4.09223959999872,
+          "checkpoint": "model.joblib",
+          "checkpoint_sha256": "724b766eec0c175ae88aea3b7b3b65d14a6a52b1f7865a7789db29779cb3e81c",
+          "run_directory": "runs/stage2_full_2bf7b0d2faf6/svm/speaker/trial_10_seed17"
+        },
+        {
+          "complete": true,
+          "model": "svm",
+          "split": "random",
+          "seed": 17,
+          "parameters": {
+            "C": 100,
+            "gamma": 0.001,
+            "cache_size_mb": 256
+          },
+          "validation": {
+            "macro_f1": 0.5063413793145307,
+            "uar": 0.5077537233225856,
+            "accuracy": 0.5096322241681261,
+            "confusion_matrix": [
+              [
+                133,
+                16,
+                10,
+                30,
+                5,
+                1
+              ],
+              [
+                18,
+                98,
+                21,
+                9,
+                18,
+                31
+              ],
+              [
+                6,
+                23,
+                78,
+                25,
+                19,
+                44
+              ],
+              [
+                45,
+                27,
+                22,
+                86,
+                12,
+                3
+              ],
+              [
+                2,
+                34,
+                15,
+                28,
+                72,
+                16
+              ],
+              [
+                0,
+                31,
+                21,
+                3,
+                25,
+                115
+              ]
+            ]
+          },
+          "fit_seconds": 2.10630780000065,
+          "total_seconds": 4.128982300000644,
+          "checkpoint": "model.joblib",
+          "checkpoint_sha256": "0e08d17a1779ac0dd2c7ebb4cf33994d1355b68655599974e5e53874fa3f3d19",
+          "run_directory": "runs/stage2_full_2bf7b0d2faf6/svm/random/final_seed17"
+        }
+      ]
+    },
+    "gmm": {
+      "mode": "full",
+      "model": "gmm",
+      "runs": [
+        {
+          "complete": true,
+          "model": "gmm",
+          "split": "speaker",
+          "seed": 17,
+          "parameters": {
+            "n_components": 8,
+            "variance_floor": 0.01,
+            "max_iter": 60,
+            "tol": 0.001,
+            "n_init": 2,
+            "batch_size": 4096
+          },
+          "validation": {
+            "macro_f1": 0.4196001790979775,
+            "uar": 0.45149700598802395,
+            "accuracy": 0.4500875656742557,
+            "confusion_matrix": [
+              [
+                158,
+                4,
+                2,
+                25,
+                3,
+                3
+              ],
+              [
+                28,
+                32,
+                18,
+                28,
+                30,
+                59
+              ],
+              [
+                40,
+                7,
+                43,
+                19,
+                16,
+                70
+              ],
+              [
+                51,
+                21,
+                24,
+                59,
+                30,
+                10
+              ],
+              [
+                3,
+                8,
+                9,
+                15,
+                85,
+                47
+              ],
+              [
+                3,
+                8,
+                18,
+                4,
+                25,
+                137
+              ]
+            ]
+          },
+          "fit_seconds": 16.54070219999994,
+          "total_seconds": 18.564752499998576,
+          "checkpoint": "model.npz",
+          "checkpoint_sha256": "41961081134c41ff95eb5d3e6e1e401dc9e39f8a6f7b023b0085e97b6e2dcba5",
+          "run_directory": "runs/stage2_full_2bf7b0d2faf6/gmm/speaker/trial_05_seed17"
+        },
+        {
+          "complete": true,
+          "model": "gmm",
+          "split": "speaker",
+          "seed": 29,
+          "parameters": {
+            "n_components": 8,
+            "variance_floor": 0.01,
+            "max_iter": 60,
+            "tol": 0.001,
+            "n_init": 2,
+            "batch_size": 4096
+          },
+          "validation": {
+            "macro_f1": 0.3906446089187295,
+            "uar": 0.4305491580940683,
+            "accuracy": 0.4299474605954466,
+            "confusion_matrix": [
+              [
+                155,
+                4,
+                1,
+                29,
+                3,
+                3
+              ],
+              [
+                26,
+                28,
+                16,
+                34,
+                33,
+                58
+              ],
+              [
+                41,
+                13,
+                18,
+                27,
+                20,
+                76
+              ],
+              [
+                45,
+                19,
+                8,
+                76,
+                32,
+                15
+              ],
+              [
+                1,
+                14,
+                6,
+                17,
+                76,
+                53
+              ],
+              [
+                1,
+                15,
+                15,
+                8,
+                18,
+                138
+              ]
+            ]
+          },
+          "fit_seconds": 16.85136219999913,
+          "total_seconds": 18.868199299999105,
+          "checkpoint": "model.npz",
+          "checkpoint_sha256": "ad1aa81c1f0f1fba27135ceb5b2ec3587aee1f9db6d4bfc28ab65b43c05d3cd8",
+          "run_directory": "runs/stage2_full_2bf7b0d2faf6/gmm/speaker/final_seed29"
+        },
+        {
+          "complete": true,
+          "model": "gmm",
+          "split": "speaker",
+          "seed": 43,
+          "parameters": {
+            "n_components": 8,
+            "variance_floor": 0.01,
+            "max_iter": 60,
+            "tol": 0.001,
+            "n_init": 2,
+            "batch_size": 4096
+          },
+          "validation": {
+            "macro_f1": 0.386358025904483,
+            "uar": 0.42356824811914634,
+            "accuracy": 0.42294220665499127,
+            "confusion_matrix": [
+              [
+                154,
+                3,
+                0,
+                32,
+                3,
+                3
+              ],
+              [
+                22,
+                28,
+                11,
+                41,
+                34,
+                59
+              ],
+              [
+                35,
+                7,
+                21,
+                35,
+                24,
+                73
+              ],
+              [
+                42,
+                18,
+                16,
+                71,
+                30,
+                18
+              ],
+              [
+                3,
+                13,
+                5,
+                16,
+                75,
+                55
+              ],
+              [
+                2,
+                13,
+                12,
+                11,
+                23,
+                134
+              ]
+            ]
+          },
+          "fit_seconds": 14.543341299999156,
+          "total_seconds": 16.55937339999946,
+          "checkpoint": "model.npz",
+          "checkpoint_sha256": "911fc0da8122d651381e9c07b524c0b09fe8c6b76d383d1c7ec1801e8d932128",
+          "run_directory": "runs/stage2_full_2bf7b0d2faf6/gmm/speaker/final_seed43"
+        },
+        {
+          "complete": true,
+          "model": "gmm",
+          "split": "random",
+          "seed": 17,
+          "parameters": {
+            "n_components": 8,
+            "variance_floor": 0.01,
+            "max_iter": 60,
+            "tol": 0.001,
+            "n_init": 2,
+            "batch_size": 4096
+          },
+          "validation": {
+            "macro_f1": 0.43816541783860785,
+            "uar": 0.46046368800859816,
+            "accuracy": 0.46059544658493873,
+            "confusion_matrix": [
+              [
+                126,
+                18,
+                5,
+                42,
+                3,
+                1
+              ],
+              [
+                20,
+                57,
+                8,
+                27,
+                20,
+                63
+              ],
+              [
+                23,
+                31,
+                28,
+                27,
+                12,
+                74
+              ],
+              [
+                42,
+                19,
+                8,
+                89,
+                30,
+                7
+              ],
+              [
+                0,
+                23,
+                10,
+                10,
+                76,
+                48
+              ],
+              [
+                0,
+                17,
+                6,
+                6,
+                16,
+                150
+              ]
+            ]
+          },
+          "fit_seconds": 15.638667400002305,
+          "total_seconds": 17.635892800000875,
+          "checkpoint": "model.npz",
+          "checkpoint_sha256": "1e4f29d778666306ce1d2bba461d636c1d123435b4b707dd06770c995fab4770",
+          "run_directory": "runs/stage2_full_2bf7b0d2faf6/gmm/random/final_seed17"
+        },
+        {
+          "complete": true,
+          "model": "gmm",
+          "split": "random",
+          "seed": 29,
+          "parameters": {
+            "n_components": 8,
+            "variance_floor": 0.01,
+            "max_iter": 60,
+            "tol": 0.001,
+            "n_init": 2,
+            "batch_size": 4096
+          },
+          "validation": {
+            "macro_f1": 0.4356977220028952,
+            "uar": 0.4540611085521265,
+            "accuracy": 0.45271453590192645,
+            "confusion_matrix": [
+              [
+                119,
+                10,
+                5,
+                52,
+                8,
+                1
+              ],
+              [
+                15,
+                58,
+                3,
+                33,
+                25,
+                61
+              ],
+              [
+                25,
+                27,
+                31,
+                31,
+                22,
+                59
+              ],
+              [
+                36,
+                24,
+                5,
+                93,
+                32,
+                5
+              ],
+              [
+                0,
+                25,
+                4,
+                12,
+                85,
+                41
+              ],
+              [
+                0,
+                22,
+                7,
+                8,
+                27,
+                131
+              ]
+            ]
+          },
+          "fit_seconds": 15.320355899999413,
+          "total_seconds": 17.331552499999816,
+          "checkpoint": "model.npz",
+          "checkpoint_sha256": "aac5fbdf6cd20fc5b7930039534e0b637eb5670f0e3cdcb55245c9dca04cd020",
+          "run_directory": "runs/stage2_full_2bf7b0d2faf6/gmm/random/final_seed29"
+        },
+        {
+          "complete": true,
+          "model": "gmm",
+          "split": "random",
+          "seed": 43,
+          "parameters": {
+            "n_components": 8,
+            "variance_floor": 0.01,
+            "max_iter": 60,
+            "tol": 0.001,
+            "n_init": 2,
+            "batch_size": 4096
+          },
+          "validation": {
+            "macro_f1": 0.4489855364884707,
+            "uar": 0.46774144019653,
+            "accuracy": 0.4658493870402802,
+            "confusion_matrix": [
+              [
+                128,
+                13,
+                8,
+                35,
+                10,
+                1
+              ],
+              [
+                18,
+                49,
+                16,
+                17,
+                40,
+                55
+              ],
+              [
+                31,
+                17,
+                46,
+                17,
+                28,
+                56
+              ],
+              [
+                38,
+                12,
+                15,
+                79,
+                45,
+                6
+              ],
+              [
+                0,
+                17,
+                7,
+                13,
+                91,
+                39
+              ],
+              [
+                0,
+                17,
+                6,
+                2,
+                31,
+                139
+              ]
+            ]
+          },
+          "fit_seconds": 13.890639200002624,
+          "total_seconds": 15.901601000001392,
+          "checkpoint": "model.npz",
+          "checkpoint_sha256": "d2480acc4bfba3df3e240ad433a23c334217dd3ebaf1e14811bc1429f38ec3cc",
+          "run_directory": "runs/stage2_full_2bf7b0d2faf6/gmm/random/final_seed43"
+        }
+      ]
+    },
+    "cnn": {
+      "mode": "full",
+      "model": "cnn",
+      "runs": [
+        {
+          "complete": true,
+          "model": "cnn",
+          "split": "speaker",
+          "seed": 17,
+          "parameters": {
+            "learning_rate": 0.0003,
+            "dropout": 0.4,
+            "weight_decay": 0.0001,
+            "batch_size": 32,
+            "max_epochs": 40,
+            "patience": 8,
+            "amp": true
+          },
+          "validation": {
+            "macro_f1": 0.4603050080031079,
+            "uar": 0.4754286299196479,
+            "accuracy": 0.4746059544658494,
+            "confusion_matrix": [
+              [
+                156,
+                7,
+                2,
+                23,
+                5,
+                2
+              ],
+              [
+                18,
+                63,
+                10,
+                26,
+                29,
+                49
+              ],
+              [
+                15,
+                17,
+                45,
+                24,
+                22,
+                72
+              ],
+              [
+                29,
+                20,
+                29,
+                67,
+                39,
+                11
+              ],
+              [
+                1,
+                21,
+                1,
+                18,
+                85,
+                41
+              ],
+              [
+                0,
+                25,
+                20,
+                10,
+                14,
+                126
+              ]
+            ],
+            "loss": 1.3088110170427776
+          },
+          "best_epoch": 26,
+          "epochs": 34,
+          "epoch_seconds": [
+            10.581954100001894,
+            10.587619699999777,
+            10.596221700001479,
+            10.59503119999863,
+            10.587127499999042,
+            10.60041529999944,
+            10.59744209999917,
+            10.577828099998442,
+            10.576898900002561,
+            10.580773400000908,
+            10.565855099997862,
+            10.586453700001584,
+            10.584564199998567,
+            10.571846000002552,
+            10.569870999999694,
+            10.579250500002672,
+            10.56072470000072,
+            10.557310000000143,
+            10.570145699999557,
+            10.569219400000293,
+            10.557743699999264,
+            10.578495300000213,
+            10.573333000000275,
+            10.555667800002993,
+            10.571704500001943,
+            10.570202200000494,
+            10.563247000001866,
+            10.570955799998046,
+            10.573975700001029,
+            10.562464999999065,
+            10.568313499999931,
+            10.577454599999328,
+            10.572509199999331,
+            10.574580999997124
+          ],
+          "fit_seconds": 359.5672006000059,
+          "this_session_seconds": 360.3466855000006,
+          "checkpoint": "best.pt",
+          "checkpoint_sha256": "addd5f2c2da61d56f43e32347b862a3f486a52421a7016472eb96ad5caf8a59d",
+          "run_directory": "runs/stage2_full_2bf7b0d2faf6/cnn/speaker/trial_03_seed17"
+        },
+        {
+          "complete": true,
+          "model": "cnn",
+          "split": "speaker",
+          "seed": 29,
+          "parameters": {
+            "learning_rate": 0.0003,
+            "dropout": 0.4,
+            "weight_decay": 0.0001,
+            "batch_size": 32,
+            "max_epochs": 40,
+            "patience": 8,
+            "amp": true
+          },
+          "validation": {
+            "macro_f1": 0.4397088685770118,
+            "uar": 0.4633246327857106,
+            "accuracy": 0.46147110332749564,
+            "confusion_matrix": [
+              [
+                163,
+                4,
+                2,
+                18,
+                7,
+                1
+              ],
+              [
+                22,
+                53,
+                17,
+                21,
+                33,
+                49
+              ],
+              [
+                21,
+                15,
+                43,
+                19,
+                30,
+                67
+              ],
+              [
+                42,
+                15,
+                34,
+                55,
+                42,
+                7
+              ],
+              [
+                4,
+                22,
+                3,
+                14,
+                90,
+                34
+              ],
+              [
+                0,
+                29,
+                13,
+                8,
+                22,
+                123
+              ]
+            ],
+            "loss": 1.325470074685567
+          },
+          "best_epoch": 20,
+          "epochs": 28,
+          "epoch_seconds": [
+            10.574685200001113,
+            10.56256470000153,
+            10.562427800003206,
+            10.576600399999734,
+            10.573089299999992,
+            10.570645799998601,
+            10.568407699996897,
+            10.567788900003507,
+            10.571533700000145,
+            10.570462499999849,
+            10.581271499999275,
+            10.571121699998912,
+            10.565623599999526,
+            10.56917650000105,
+            10.571751700001187,
+            10.575702199999796,
+            10.569525499999145,
+            10.57821039999908,
+            10.567613100000017,
+            10.573471399999107,
+            10.560774199999287,
+            10.584710899998754,
+            10.568298199999845,
+            10.57717920000141,
+            10.572716399998171,
+            10.569188400000712,
+            10.576359700000467,
+            10.578329899999517
+          ],
+          "fit_seconds": 296.00923049999983,
+          "this_session_seconds": 296.66517720000047,
+          "checkpoint": "best.pt",
+          "checkpoint_sha256": "6d9a676246801da6c0bd93011dff9cb029474b2f7623efc2344d568e918c1876",
+          "run_directory": "runs/stage2_full_2bf7b0d2faf6/cnn/speaker/final_seed29"
+        },
+        {
+          "complete": true,
+          "model": "cnn",
+          "split": "speaker",
+          "seed": 43,
+          "parameters": {
+            "learning_rate": 0.0003,
+            "dropout": 0.4,
+            "weight_decay": 0.0001,
+            "batch_size": 32,
+            "max_epochs": 40,
+            "patience": 8,
+            "amp": true
+          },
+          "validation": {
+            "macro_f1": 0.4076076487879392,
+            "uar": 0.4389323916270024,
+            "accuracy": 0.44220665499124345,
+            "confusion_matrix": [
+              [
+                169,
+                3,
+                0,
+                20,
+                2,
+                1
+              ],
+              [
+                35,
+                60,
+                10,
+                33,
+                16,
+                41
+              ],
+              [
+                42,
+                18,
+                22,
+                30,
+                17,
+                66
+              ],
+              [
+                59,
+                11,
+                17,
+                79,
+                21,
+                8
+              ],
+              [
+                6,
+                32,
+                2,
+                37,
+                51,
+                39
+              ],
+              [
+                2,
+                29,
+                13,
+                13,
+                14,
+                124
+              ]
+            ],
+            "loss": 1.4099546299972698
+          },
+          "best_epoch": 6,
+          "epochs": 14,
+          "epoch_seconds": [
+            10.569785200001206,
+            10.571110900000349,
+            10.57362490000014,
+            10.571124499998405,
+            10.555559499996889,
+            10.575304300000425,
+            10.569320800001151,
+            10.566790900000342,
+            10.57442169999922,
+            10.574184099998092,
+            10.564710899998317,
+            10.572581100001116,
+            10.574809099998674,
+            10.571215600000869
+          ],
+          "fit_seconds": 147.9845434999952,
+          "this_session_seconds": 148.42225929999768,
+          "checkpoint": "best.pt",
+          "checkpoint_sha256": "be6c75761071df176a2773707623026d93b99d78b7a540b8fd6f37d7bce3d0f6",
+          "run_directory": "runs/stage2_full_2bf7b0d2faf6/cnn/speaker/final_seed43"
+        },
+        {
+          "complete": true,
+          "model": "cnn",
+          "split": "random",
+          "seed": 17,
+          "parameters": {
+            "learning_rate": 0.0003,
+            "dropout": 0.4,
+            "weight_decay": 0.0001,
+            "batch_size": 32,
+            "max_epochs": 40,
+            "patience": 8,
+            "amp": true
+          },
+          "validation": {
+            "macro_f1": 0.42459575730337895,
+            "uar": 0.445805824248938,
+            "accuracy": 0.44308231173380036,
+            "confusion_matrix": [
+              [
+                130,
+                11,
+                4,
+                47,
+                3,
+                0
+              ],
+              [
+                27,
+                54,
+                8,
+                32,
+                44,
+                30
+              ],
+              [
+                17,
+                29,
+                23,
+                50,
+                36,
+                40
+              ],
+              [
+                44,
+                9,
+                15,
+                99,
+                24,
+                4
+              ],
+              [
+                0,
+                20,
+                9,
+                32,
+                93,
+                13
+              ],
+              [
+                0,
+                26,
+                10,
+                5,
+                47,
+                107
+              ]
+            ],
+            "loss": 1.380891320797943
+          },
+          "best_epoch": 10,
+          "epochs": 18,
+          "epoch_seconds": [
+            10.784529599997768,
+            10.517826600000262,
+            10.53668689999904,
+            10.512128200000006,
+            10.544712200000504,
+            10.553649299999961,
+            10.53218139999808,
+            10.544883700000355,
+            10.570591600000625,
+            10.55318410000109,
+            10.558141099998466,
+            10.56705310000325,
+            10.579162499998347,
+            10.561942799999088,
+            10.57533340000009,
+            10.565091199998278,
+            10.563635400001658,
+            10.565052999998443
+          ],
+          "fit_seconds": 190.1857860999953,
+          "this_session_seconds": 190.70092940000177,
+          "checkpoint": "best.pt",
+          "checkpoint_sha256": "4c7e459b65a618cce1b7b80a02c22b81e0e08542081dac0077ded8ff75c63a00",
+          "run_directory": "runs/stage2_full_2bf7b0d2faf6/cnn/random/final_seed17"
+        },
+        {
+          "complete": true,
+          "model": "cnn",
+          "split": "random",
+          "seed": 29,
+          "parameters": {
+            "learning_rate": 0.0003,
+            "dropout": 0.4,
+            "weight_decay": 0.0001,
+            "batch_size": 32,
+            "max_epochs": 40,
+            "patience": 8,
+            "amp": true
+          },
+          "validation": {
+            "macro_f1": 0.4126036228878911,
+            "uar": 0.44065202927478375,
+            "accuracy": 0.44220665499124345,
+            "confusion_matrix": [
+              [
+                143,
+                12,
+                2,
+                37,
+                1,
+                0
+              ],
+              [
+                29,
+                61,
+                9,
+                32,
+                29,
+                35
+              ],
+              [
+                27,
+                35,
+                16,
+                52,
+                14,
+                51
+              ],
+              [
+                61,
+                14,
+                6,
+                93,
+                17,
+                4
+              ],
+              [
+                1,
+                32,
+                4,
+                37,
+                63,
+                30
+              ],
+              [
+                0,
+                27,
+                6,
+                8,
+                25,
+                129
+              ]
+            ],
+            "loss": 1.3885713533245165
+          },
+          "best_epoch": 7,
+          "epochs": 15,
+          "epoch_seconds": [
+            10.577029899999616,
+            10.563224900000932,
+            10.557739200001379,
+            10.567582100000436,
+            10.559696399999666,
+            10.564466100000573,
+            10.57653140000184,
+            10.567267400001583,
+            10.563143399998808,
+            10.569158199999947,
+            10.560916800000996,
+            10.568129399998725,
+            10.570489400000952,
+            10.571196099997906,
+            10.574619899998652
+          ],
+          "fit_seconds": 158.511190600002,
+          "this_session_seconds": 158.98914259999947,
+          "checkpoint": "best.pt",
+          "checkpoint_sha256": "d7cc1a21d2fffdb3c7be58a640fcc812f0af42797581f423b02ebce263472e7c",
+          "run_directory": "runs/stage2_full_2bf7b0d2faf6/cnn/random/final_seed29"
+        },
+        {
+          "complete": true,
+          "model": "cnn",
+          "split": "random",
+          "seed": 43,
+          "parameters": {
+            "learning_rate": 0.0003,
+            "dropout": 0.4,
+            "weight_decay": 0.0001,
+            "batch_size": 32,
+            "max_epochs": 40,
+            "patience": 8,
+            "amp": true
+          },
+          "validation": {
+            "macro_f1": 0.4541633049633044,
+            "uar": 0.4700240544551922,
+            "accuracy": 0.46760070052539404,
+            "confusion_matrix": [
+              [
+                126,
+                16,
+                8,
+                40,
+                5,
+                0
+              ],
+              [
+                26,
+                54,
+                17,
+                12,
+                44,
+                42
+              ],
+              [
+                16,
+                19,
+                52,
+                28,
+                21,
+                59
+              ],
+              [
+                41,
+                15,
+                31,
+                71,
+                34,
+                3
+              ],
+              [
+                0,
+                19,
+                9,
+                12,
+                95,
+                32
+              ],
+              [
+                1,
+                14,
+                11,
+                2,
+                31,
+                136
+              ]
+            ],
+            "loss": 1.3234395028487218
+          },
+          "best_epoch": 22,
+          "epochs": 30,
+          "epoch_seconds": [
+            10.567094599999109,
+            10.572454400000424,
+            10.571521100002428,
+            10.564330900000641,
+            10.568724199998542,
+            10.569751099999849,
+            10.562239499999123,
+            10.564920900000288,
+            10.569253699999535,
+            10.558306700000685,
+            10.56105209999805,
+            10.574783000000025,
+            10.573808299999655,
+            10.565198100000998,
+            10.554725300000428,
+            10.571294100001978,
+            10.55689110000094,
+            10.568854200002534,
+            10.566630000001169,
+            10.56496259999767,
+            10.555247399999644,
+            10.574599700001272,
+            10.569693099998403,
+            10.575074000000313,
+            10.575494000000617,
+            10.568197500000679,
+            10.566879699999845,
+            10.576705999999831,
+            10.577175000002171,
+            10.569557599999825
+          ],
+          "fit_seconds": 317.0354199000067,
+          "this_session_seconds": 317.7610402999999,
+          "checkpoint": "best.pt",
+          "checkpoint_sha256": "65e218ae17a368e92911dfcdd92e150ffbc98636e753880c5c8904f4ad948a3f",
+          "run_directory": "runs/stage2_full_2bf7b0d2faf6/cnn/random/final_seed43"
+        }
+      ]
+    }
+  }
+}

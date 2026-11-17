@@ -1,0 +1,17 @@
+{
+  "svm": {
+    "one_fit_seconds": 1.994687200000044,
+    "rough_whole_stage_minutes": 0.7754820449999897,
+    "note": "C and gamma affect runtime; this is one measured configuration."
+  },
+  "gmm": {
+    "rough_one_run_minutes": 0.8386708400001226,
+    "rough_whole_stage_minutes": 10.902720920001594,
+    "note": "Extrapolated from K=8; K, convergence and initialization change runtime."
+  },
+  "cnn": {
+    "measured_seconds_per_epoch": 19.113913199999843,
+    "one_run_epoch_cap_minutes": 12.742608799999894,
+    "whole_stage_epoch_cap_minutes": 114.68347919999906
+  }
+}

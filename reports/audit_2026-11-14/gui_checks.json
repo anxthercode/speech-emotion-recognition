@@ -1,0 +1,143 @@
+{
+  "predictions": [
+    {
+      "model": "svm",
+      "condition": "clean",
+      "snr_db": null,
+      "emotion": "ANG",
+      "matches_cli_backend": true
+    },
+    {
+      "model": "svm",
+      "condition": "white",
+      "snr_db": 0,
+      "emotion": "ANG",
+      "matches_cli_backend": true
+    },
+    {
+      "model": "svm",
+      "condition": "background",
+      "snr_db": 10,
+      "emotion": "ANG",
+      "matches_cli_backend": true
+    },
+    {
+      "model": "gmm",
+      "condition": "clean",
+      "snr_db": null,
+      "emotion": "ANG",
+      "matches_cli_backend": true
+    },
+    {
+      "model": "gmm",
+      "condition": "white",
+      "snr_db": 0,
+      "emotion": "ANG",
+      "matches_cli_backend": true
+    },
+    {
+      "model": "gmm",
+      "condition": "background",
+      "snr_db": 10,
+      "emotion": "ANG",
+      "matches_cli_backend": true
+    },
+    {
+      "model": "cnn",
+      "condition": "clean",
+      "snr_db": null,
+      "emotion": "ANG",
+      "matches_cli_backend": true
+    },
+    {
+      "model": "cnn",
+      "condition": "white",
+      "snr_db": 0,
+      "emotion": "ANG",
+      "matches_cli_backend": true
+    },
+    {
+      "model": "cnn",
+      "condition": "background",
+      "snr_db": 10,
+      "emotion": "ANG",
+      "matches_cli_backend": true
+    }
+  ],
+  "geometry": [
+    {
+      "width": 1040,
+      "height": 760,
+      "plots_do_not_move": true,
+      "details_scroll_max": 95
+    },
+    {
+      "width": 1280,
+      "height": 880,
+      "plots_do_not_move": true,
+      "details_scroll_max": 0
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "plots_do_not_move": true,
+      "details_scroll_max": 0
+    }
+  ],
+  "silence": {
+    "svm": {
+      "model": "svm",
+      "split": "speaker",
+      "seed": 17,
+      "emotion": "SAD",
+      "score_type": "svm_ovr_decision_score",
+      "scores": {
+        "ANG": -0.31075223534468754,
+        "DIS": 1.7997718059285166,
+        "FEA": 3.3077852496551854,
+        "HAP": 4.309692678743339,
+        "NEU": 0.6781144073381923,
+        "SAD": 5.3160050957007545
+      }
+    },
+    "gmm": {
+      "model": "gmm",
+      "split": "speaker",
+      "seed": 17,
+      "emotion": "ANG",
+      "score_type": "mean_log_posterior_score",
+      "scores": {
+        "ANG": -61.58673267583712,
+        "DIS": -78.9633393558876,
+        "FEA": -70.49271794959141,
+        "HAP": -81.7058432623639,
+        "NEU": -88.65439171685573,
+        "SAD": -94.3484894622586
+      }
+    },
+    "cnn": {
+      "model": "cnn",
+      "split": "speaker",
+      "seed": 17,
+      "emotion": "HAP",
+      "score_type": "softmax_probability",
+      "scores": {
+        "ANG": 0.011636174283921719,
+        "DIS": 0.008394804783165455,
+        "FEA": 0.14433129131793976,
+        "HAP": 0.3815630376338959,
+        "NEU": 0.2464713752269745,
+        "SAD": 0.20760327577590942
+      }
+    }
+  },
+  "formats": [
+    "wav",
+    "mp3",
+    "flac",
+    "ogg",
+    "aiff"
+  ],
+  "metrics_display_rows_verified": 42,
+  "json_export": "verified"
+}

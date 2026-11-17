@@ -1,0 +1,29 @@
+{
+  "selection_split": "speaker",
+  "selection_seed": 17,
+  "final_seeds": [17, 29, 43],
+  "cpu_threads": 2,
+  "cnn": {
+    "learning_rates": [0.001, 0.0003],
+    "dropouts": [0.2, 0.4],
+    "weight_decay": 0.0001,
+    "batch_size": 32,
+    "max_epochs": 40,
+    "patience": 8,
+    "amp": true
+  },
+  "gmm": {
+    "components": [2, 4, 8, 16],
+    "variance_floors": [0.001, 0.01],
+    "frames_per_file": 80,
+    "max_iter": 60,
+    "tol": 0.001,
+    "n_init": 2,
+    "batch_size": 4096
+  },
+  "svm": {
+    "C": [0.1, 1, 10, 100],
+    "gamma": ["scale", 0.001, 0.01],
+    "cache_size_mb": 256
+  }
+}

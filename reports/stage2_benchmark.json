@@ -1,0 +1,333 @@
+{
+  "all_models_complete": true,
+  "stage2_complete": false,
+  "mode": "benchmark",
+  "test_evaluated": false,
+  "run_root": "runs/stage2_benchmark_d95ed19439ff",
+  "manifest": {
+    "mode": "benchmark",
+    "config": {
+      "selection_split": "speaker",
+      "selection_seed": 17,
+      "final_seeds": [
+        17,
+        29,
+        43
+      ],
+      "cpu_threads": 2,
+      "cnn": {
+        "learning_rates": [
+          0.001,
+          0.0003
+        ],
+        "dropouts": [
+          0.2,
+          0.4
+        ],
+        "weight_decay": 0.0001,
+        "batch_size": 32,
+        "max_epochs": 40,
+        "patience": 8,
+        "amp": true
+      },
+      "gmm": {
+        "components": [
+          2,
+          4,
+          8,
+          16
+        ],
+        "variance_floors": [
+          0.001,
+          0.01
+        ],
+        "frames_per_file": 80,
+        "max_iter": 60,
+        "tol": 0.001,
+        "n_init": 2,
+        "batch_size": 4096
+      },
+      "svm": {
+        "C": [
+          0.1,
+          1,
+          10,
+          100
+        ],
+        "gamma": [
+          "scale",
+          0.001,
+          0.01
+        ],
+        "cache_size_mb": 256
+      }
+    },
+    "dataset_fingerprint": "d39e9ad9be5949114180b5cbfe87f9fd603eaf964ea4ea36889b92b8de0015fa",
+    "versions": {
+      "python": "3.12.10",
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "torch": "2.11.0+cu128",
+      "sklearn": "1.9.1"
+    },
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "implementation": {
+      "ser/gmm.py": "7aa8e05969f8650cab7df9314d53e621ad3bad88ef3abb319591e872bc7b51c7",
+      "ser/cnn.py": "9885098b89c1c3c85e2f63c0351e0331b433397a49290c11693304aa19d077c6",
+      "ser/train_cnn.py": "3f1a2a87742612702bf19e67ad26a11787b0fcee38013ea036c466536a9f2fee",
+      "ser/train_classical.py": "71c8834a12ee65cf8b8bb25430af09d19e7a6eb157357728e7965353a513184d",
+      "ser/training_common.py": "93be6edbef1d193cbe57504e024bd41e02f58482c45cc38c595f24298f3bbdcf",
+      "ser/features.py": "d25215048a5ecd59657cf0bf9a54210d62b7bb56d5717279dd1880e64bbfed53",
+      "ser/dataset.py": "dbe5dd25532f930a7a2180a1eed98141c190cab473ac34c5183ae626c917e67d",
+      "tools/train_models.py": "d84f7684b119d071963605aa9ad6efc3e02637539fa5ee173c8eb98640a30c64"
+    }
+  },
+  "models": {
+    "svm": {
+      "mode": "benchmark",
+      "model": "svm",
+      "runs": [
+        {
+          "complete": true,
+          "model": "svm",
+          "split": "speaker",
+          "seed": 17,
+          "parameters": {
+            "C": 10,
+            "gamma": "scale",
+            "cache_size_mb": 256
+          },
+          "validation": {
+            "macro_f1": 0.47669634471299177,
+            "uar": 0.4871078356108296,
+            "accuracy": 0.4868651488616462,
+            "confusion_matrix": [
+              [
+                158,
+                7,
+                9,
+                17,
+                3,
+                1
+              ],
+              [
+                36,
+                59,
+                19,
+                24,
+                22,
+                35
+              ],
+              [
+                30,
+                12,
+                69,
+                23,
+                19,
+                42
+              ],
+              [
+                34,
+                19,
+                33,
+                88,
+                15,
+                6
+              ],
+              [
+                9,
+                12,
+                14,
+                21,
+                83,
+                28
+              ],
+              [
+                3,
+                26,
+                33,
+                11,
+                23,
+                99
+              ]
+            ]
+          },
+          "fit_seconds": 1.994687200000044,
+          "total_seconds": 3.5791478999999526,
+          "checkpoint": "model.joblib",
+          "checkpoint_sha256": "aa177b03515875700ee20cd41e5d7a942eea150092c619d7688ba1622a173cb9",
+          "run_directory": "runs/stage2_benchmark_d95ed19439ff/svm/speaker/trial_00_seed17"
+        }
+      ]
+    },
+    "gmm": {
+      "mode": "benchmark",
+      "model": "gmm",
+      "runs": [
+        {
+          "complete": true,
+          "model": "gmm",
+          "split": "speaker",
+          "seed": 17,
+          "parameters": {
+            "n_components": 8,
+            "variance_floor": 0.001,
+            "max_iter": 5,
+            "tol": 0,
+            "n_init": 1,
+            "batch_size": 4096
+          },
+          "validation": {
+            "macro_f1": 0.41309128158087915,
+            "uar": 0.4439480014330314,
+            "accuracy": 0.44220665499124345,
+            "confusion_matrix": [
+              [
+                154,
+                2,
+                3,
+                30,
+                3,
+                3
+              ],
+              [
+                24,
+                38,
+                14,
+                32,
+                34,
+                53
+              ],
+              [
+                44,
+                18,
+                32,
+                14,
+                21,
+                66
+              ],
+              [
+                44,
+                16,
+                22,
+                62,
+                42,
+                9
+              ],
+              [
+                0,
+                11,
+                7,
+                21,
+                86,
+                42
+              ],
+              [
+                1,
+                12,
+                19,
+                9,
+                21,
+                133
+              ]
+            ]
+          },
+          "fit_seconds": 2.0966771000003064,
+          "total_seconds": 3.5387320999998337,
+          "checkpoint": "model.npz",
+          "checkpoint_sha256": "0d273f1e0db434afebe92e436f8ea00435ef0de9c416e52d8228598d5997dc22",
+          "run_directory": "runs/stage2_benchmark_d95ed19439ff/gmm/speaker/trial_00_seed17"
+        }
+      ]
+    },
+    "cnn": {
+      "mode": "benchmark",
+      "model": "cnn",
+      "runs": [
+        {
+          "complete": true,
+          "model": "cnn",
+          "split": "speaker",
+          "seed": 17,
+          "parameters": {
+            "learning_rate": 0.001,
+            "dropout": 0.2,
+            "weight_decay": 0.0001,
+            "batch_size": 32,
+            "max_epochs": 2,
+            "patience": 2,
+            "amp": true
+          },
+          "validation": {
+            "macro_f1": 0.35288729696758625,
+            "uar": 0.39873074364092326,
+            "accuracy": 0.4063047285464098,
+            "confusion_matrix": [
+              [
+                165,
+                9,
+                7,
+                9,
+                3,
+                2
+              ],
+              [
+                27,
+                79,
+                17,
+                11,
+                6,
+                55
+              ],
+              [
+                39,
+                31,
+                25,
+                9,
+                5,
+                86
+              ],
+              [
+                59,
+                36,
+                26,
+                38,
+                11,
+                25
+              ],
+              [
+                3,
+                47,
+                15,
+                10,
+                15,
+                77
+              ],
+              [
+                2,
+                32,
+                12,
+                1,
+                6,
+                142
+              ]
+            ],
+            "loss": 1.423279908393682
+          },
+          "best_epoch": 2,
+          "epochs": 2,
+          "epoch_seconds": [
+            19.677792299999965,
+            19.113913199999843
+          ],
+          "fit_seconds": 38.79170549999981,
+          "this_session_seconds": 39.31927489999998,
+          "checkpoint": "best.pt",
+          "checkpoint_sha256": "e0720939c8d05f9bb93a05dbaf5266918e04cbe2beb18d833acdf581658c4a47",
+          "run_directory": "runs/stage2_benchmark_d95ed19439ff/cnn/speaker/trial_00_seed17"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "source": "D:\\Downloads\\CREMA-D-master.zip",
+  "wav_entries": 7442,
+  "speakers_in_names": 91,
+  "classes_in_names": {
+    "ANG": 1271,
+    "DIS": 1271,
+    "FEA": 1271,
+    "HAP": 1271,
+    "NEU": 1087,
+    "SAD": 1271
+  },
+  "types": {
+    "lfs_pointer": 7442
+  },
+  "stored_wav_bytes": 968347,
+  "expected_audio_bytes_from_pointers": 605899936,
+  "complete_wav_headers": false,
+  "full_audio_audit_performed": false,
+  "examples": [
+    {
+      "file": "CREMA-D-master/AudioWAV/1001_DFA_ANG_XX.wav",
+      "stored_bytes": 130,
+      "type": "lfs_pointer"
+    },
+    {
+      "file": "CREMA-D-master/AudioWAV/1001_DFA_DIS_XX.wav",
+      "stored_bytes": 130,
+      "type": "lfs_pointer"
+    },
+    {
+      "file": "CREMA-D-master/AudioWAV/1001_DFA_FEA_XX.wav",
+      "stored_bytes": 130,
+      "type": "lfs_pointer"
+    }
+  ],
+  "next_step": "fetch_real_audio_with_git_lfs"
+}

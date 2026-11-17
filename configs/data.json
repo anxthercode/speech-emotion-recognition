@@ -1,0 +1,22 @@
+{
+  "audio": {
+    "sample_rate": 16000,
+    "n_fft": 512,
+    "win_length": 400,
+    "hop_length": 160,
+    "n_mels": 64,
+    "fmin": 50.0,
+    "fmax": 7600.0,
+    "window_seconds": 4,
+    "eval_hop_seconds": 2,
+    "log_floor": 1e-10,
+    "n_mfcc": 13,
+    "delta_radius": 2
+  },
+  "split_seed": 42,
+  "validation_speakers": 14,
+  "test_speakers": 14,
+  "noise_seed": 2026,
+  "snr_db": [20, 10, 0],
+  "background_source": "configs/background_source.json"
+}
